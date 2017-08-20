@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ساقية الصاوى</string>
+    <string name="drawer_open">فتح</string>
+    <string name="drawer_close">غلق</string>
+    <string name="lang">En</string>
+    <string name="home">الصفحة الرئيسية</string>
+    <string name="membership">العضوية</string>
+    <string name="about_us">عن الساقية</string>
+    <string name="contact_us">تواصل معنا</string>
+    <string name="powered_by">تطور بواسطة</string>
+    <string name="noshow">عفواً,لا يوجد حدث فى هذا اليوم</string>
+    <string name="load1">حدث هذا اليوم ..</string>
+    <string name="load2">تفاصيل أحداث اليوم ..</string>
+    <string name="load3">التفاصيل ..</string>
+    <string name="loading">تحميل ..</string>
+    <string name="call_us_spot">إتصل بنا</string>
+    <string name="web_site_spot">الموقع</string>
+    <string name="web_site_spot_text">الموقع : spoteg.com </string>
+    <string name="tel_spot_text">التليفون :01280408884 </string>
+    <string name="mail_spot_text">الإيميل : info@spoteg.com</string>
+    <string name="copy_spot_text">© حقوق الملكية الفكرية محفوظة لعام 2017 لشركة Spot</string>
+</resources>

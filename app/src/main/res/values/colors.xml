@@ -3,4 +3,16 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorEvent">#8083ab</color>
+    <color name="colorBackGround">#3b5998</color>
+    <color name="colorMenu">#FFFFFF</color>
+    <color name="colorToolbar">#304b69</color>
+    <color name="colorFisrt">#4a90e2</color>
+    <color name="colorSecond">#d036da</color>
+    <color name="colorThird">#e2982f</color>
+    <color name="colorForth">#249e60</color>
+    <color name="colorBackGround2">#c2c6cf</color>
+    <color name="colorText">#213d78</color>
+    <color name="colorBackGroundSpot">#0c3743</color>
+    <color name="colorFontAndButton">#ffffff</color>
 </resources>

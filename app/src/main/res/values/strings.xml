@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">CultureWheel</string>
+    <string name="drawer_open">OPEN</string>
+    <string name="drawer_close">CLOSE</string>
+    <string name="lang">عربى</string>
+    <string name="home">Home</string>
+    <string name="membership">Membership</string>
+    <string name="about_us">About Us</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="powered_by">Powered By</string>
+    <string name="noshow">Sorry , there are no events today</string>
+    <string name="load1">Event of this day ..</string>
+    <string name="load2">Details events of this day ..</string>
+    <string name="load3">Details ..</string>
+    <string name="loading">Loading ..</string>
+    <string name="call_us_spot">Call Us</string>
+    <string name="web_site_spot">Web Site</string>
+    <string name="web_site_spot_text">Web Site : spoteg.com</string>
+    <string name="tel_spot_text">Tel : 01280408884</string>
+    <string name="mail_spot_text">Mail : info@spoteg.com</string>
+    <string name="copy_spot_text">© Copyright 2017. Powered by Spot Company</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

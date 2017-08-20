@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_powerd_by"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackGroundSpot"
+    android:orientation="vertical"
+    tools:context="com.farid.mohammed.culturewheel.PoweredByActivity">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+    <ImageView
+        android:id="@+id/spot_logo"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="20dp"
+        android:background="@mipmap/logo_spot"
+        android:scaleType="centerInside" />
+
+    <Button
+        android:id="@+id/call_us_spot"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_ship_spot"
+        android:text="@string/call_us_spot"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBackGroundSpot"/>
+
+    <Button
+        android:id="@+id/web_site_spot"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_ship_spot"
+        android:text="@string/web_site_spot"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBackGroundSpot"/>
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:layout_marginTop="30dp"
+       android:layout_marginBottom="30dp"
+       android:layout_marginLeft="10dp">
+    <TextView
+        android:id="@+id/web_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/web_site_spot_text"
+        android:layout_margin="10dp"
+        android:textColor="@color/colorFontAndButton"/>
+
+    <TextView
+        android:id="@+id/mail_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tel_spot_text"
+        android:layout_margin="10dp"
+        android:textColor="@color/colorFontAndButton"/>
+
+    <TextView
+        android:id="@+id/tel_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mail_spot_text"
+        android:layout_margin="10dp"
+        android:textColor="@color/colorFontAndButton"/>
+   </LinearLayout>
+    <TextView
+        android:id="@+id/copy_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/copy_spot_text"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/colorFontAndButton"/>
+
+</LinearLayout>
