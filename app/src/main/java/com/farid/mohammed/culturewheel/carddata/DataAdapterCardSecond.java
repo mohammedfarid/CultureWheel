@@ -1,16 +1,13 @@
-package carddata;
+package com.farid.mohammed.culturewheel.carddata;
 
 import android.content.Context;
-import android.support.v7.widget.PopupMenu;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.farid.mohammed.culturewheel.R;
 
@@ -24,10 +21,12 @@ import java.util.ArrayList;
 public class DataAdapterCardSecond extends RecyclerView.Adapter<DataAdapterCardSecond.ViewHolder> {
     private Context mContext;
     private ArrayList<CategorySecond> categories;
-    public DataAdapterCardSecond(Context mContext, ArrayList<CategorySecond> categories){
-        this.mContext=mContext;
+
+    public DataAdapterCardSecond(Context mContext, ArrayList<CategorySecond> categories) {
+        this.mContext = mContext;
         this.categories = categories;
     }
+
     @Override
     public DataAdapterCardSecond.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_row_second, viewGroup, false);
@@ -54,19 +53,20 @@ public class DataAdapterCardSecond extends RecyclerView.Adapter<DataAdapterCardS
         return categories.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView tv_title;
         private TextView tv_cat;
         private TextView tv_date;
-        private ImageView thumbnail,overflow;
-        private TextView tv_days,tv_month;
+        private ImageView thumbnail, overflow;
+        private TextView tv_days, tv_month;
+
         public ViewHolder(View view) {
             super(view);
             tv_days = (TextView) view.findViewById(R.id.day_tv);
             tv_month = (TextView) view.findViewById(R.id.month_tv);
-            tv_title = (TextView)view.findViewById(R.id.title);
-            tv_cat = (TextView)view.findViewById(R.id.cat);
-            tv_date =(TextView)view.findViewById(R.id.date);
+            tv_title = (TextView) view.findViewById(R.id.title);
+            tv_cat = (TextView) view.findViewById(R.id.cat);
+            tv_date = (TextView) view.findViewById(R.id.date);
             thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
             overflow = (ImageView) view.findViewById(R.id.overflow);
         }

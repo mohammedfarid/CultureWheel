@@ -1,21 +1,20 @@
 package com.farid.mohammed.culturewheel;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.provider.ContactsContract;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -24,8 +23,6 @@ import org.jsoup.select.Elements;
 
 import java.io.InputStream;
 import java.util.ArrayList;
-
-import carddata.CategorySecond;
 
 public class DetailsEventActivity extends AppCompatActivity {
     String url;
@@ -51,7 +48,7 @@ public class DetailsEventActivity extends AppCompatActivity {
         detailsText.setMovementMethod(new ScrollingMovementMethod());
         intent = getIntent();
         url = intent.getStringExtra("url");
-        Toast.makeText(getApplicationContext(),url, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), url, Toast.LENGTH_SHORT).show();
         //add Toolbare
         initToolbar();
         new HtmlJsoup().execute();
@@ -62,7 +59,8 @@ public class DetailsEventActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
         getSupportActionBar().setTitle("");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);    }
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -87,6 +85,7 @@ public class DetailsEventActivity extends AppCompatActivity {
         }
         return true;
     }
+
     private class HtmlJsoup extends AsyncTask<Void, Void, Void> {
         ArrayList<Bitmap> bitmap;
         ArrayList<String> imgSrc, nameList, timeList, tagList, locationList, detailsList, detailsList2, detailsList3;

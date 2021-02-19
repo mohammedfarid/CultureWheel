@@ -1,4 +1,4 @@
-package categorys;
+package com.farid.mohammed.culturewheel.categorys;
 
 import android.content.Context;
 
@@ -10,7 +10,7 @@ import com.farid.mohammed.culturewheel.R;
 
 public class MonthCategory {
     public Context context;
-    public int[] color={R.color.colorEvent};
+    public int[] color = {R.color.colorEvent};
     public int[] draw = {
             R.drawable.round_ship_first,
             R.drawable.round_ship_second,

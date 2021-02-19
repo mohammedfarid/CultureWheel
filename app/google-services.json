@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "401564463023",
+    "project_id": "culturewheel",
+    "storage_bucket": "culturewheel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:401564463023:android:f767189b8791e3cf47495a",
+        "android_client_info": {
+          "package_name": "com.farid.mohammed.culturewheel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "401564463023-dhikr8a8b6bau1c028r2gclqbr32uckm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.farid.mohammed.culturewheel",
+            "certificate_hash": "3da3ef74fc8d4dc4754728c83fd87d9b730f47dc"
+          }
+        },
+        {
+          "client_id": "401564463023-vostpjg98i20vt182n6o3j57a2rvri84.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe320gyqgOSqHd1U6vOj0yFbcDDnyhs9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "401564463023-vostpjg98i20vt182n6o3j57a2rvri84.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

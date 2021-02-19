@@ -6,15 +6,8 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Rect;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
 import android.view.GestureDetector;
 import android.view.Menu;
@@ -26,36 +19,36 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.farid.mohammed.culturewheel.carddata.CategorySecond;
+import com.farid.mohammed.culturewheel.carddata.DataAdapterCardSecond;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.io.IOException;
 import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Locale;
 
-import carddata.Category;
-import carddata.CategorySecond;
-import carddata.DataAdapterCard;
-import carddata.DataAdapterCardSecond;
-import categorys.MonthCategory;
 
 public class DayActivity extends AppCompatActivity {
     String url, dating, lang;
     ProgressDialog mProgressDialog;
-    private Toolbar toolbar;
-    private RecyclerView recyclerView;
-    private DataAdapterCardSecond dataAdapterCardSecond;
-    private ArrayList<CategorySecond> categoryList;
     Intent intent;
     ArrayList<String> imgSrc, nameList, timeList, locationList, linksList;
     ImageView backGround;
     TextView noShow;
     LinearLayout linearLayout;
+    private Toolbar toolbar;
+    private RecyclerView recyclerView;
+    private DataAdapterCardSecond dataAdapterCardSecond;
+    private ArrayList<CategorySecond> categoryList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +59,8 @@ public class DayActivity extends AppCompatActivity {
         dating = intent.getStringExtra("daytime");
         lang = intent.getStringExtra("lang");
         Toast.makeText(getApplicationContext(), dating, Toast.LENGTH_LONG).show();
-        backGround = (ImageView)findViewById(R.id.backdrop2);
-        noShow = (TextView)findViewById(R.id.no_tv);
+        backGround = (ImageView) findViewById(R.id.backdrop2);
+        noShow = (TextView) findViewById(R.id.no_tv);
         linearLayout = (LinearLayout) findViewById(R.id.no_linear);
         //add Toolbare
         initToolbar();
@@ -96,7 +89,7 @@ public class DayActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(dataAdapterCardSecond);
         recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
-            GestureDetector gestureDetector = new GestureDetector(getApplicationContext(),
+            final GestureDetector gestureDetector = new GestureDetector(getApplicationContext(),
                     new GestureDetector.SimpleOnGestureListener() {
 
                         @Override
@@ -115,15 +108,7 @@ public class DayActivity extends AppCompatActivity {
 
 
                     try {
-                        if (lang.equals("ar")) {
-
-                            url = linksList.get(position).toString();
-                        } else {
-                            //Toast.makeText(getApplicationContext(),lang+"en",Toast.LENGTH_LONG).show();
-                            // url = "http://www.culturewheel.com/en/day/" + year + "-" + myMonth + "-" + categoryList.get(position).getTvDay();
-                            url = linksList.get(position).toString();
-                            //Toast.makeText(getApplicationContext(),url+"عربي",Toast.LENGTH_LONG).show();
-                        }
+                        url = linksList.get(position);
                         Intent details = new Intent(DayActivity.this, DetailsEventActivity.class);
                         details.putExtra("url", url);
                         startActivity(details);
@@ -158,17 +143,23 @@ public class DayActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         try {
-            switch (item.getItemId()) {
-                case android.R.id.home:
-                    this.finish();
-                    break;
-                default:
-                    return super.onOptionsItemSelected(item);
+            if (item.getItemId() == android.R.id.home) {
+                this.finish();
+            } else {
+                return super.onOptionsItemSelected(item);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return true;
+    }
+
+    /**
+     * Converting dp to pixel
+     */
+    private int dpToPx(int dp) {
+        Resources r = getResources();
+        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
 
     private class HtmlJsoup extends AsyncTask<Void, Void, String> {
@@ -198,6 +189,7 @@ public class DayActivity extends AppCompatActivity {
                 locationList = new ArrayList<>();
                 linksList = new ArrayList<>();
                 // Connect to the web site
+                System.setProperty("javax.net.ssl.trustStore", "/path/to/web2.uconn.edu.jks");
                 document = Jsoup.connect(url).get();
 
                 // Using Elements to get the class data
@@ -231,7 +223,7 @@ public class DayActivity extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(String  result) {
+        protected void onPostExecute(String result) {
             super.onPostExecute(result);
             if (bitmap.isEmpty()) {
                 linearLayout.setVisibility(View.VISIBLE);
@@ -254,9 +246,9 @@ public class DayActivity extends AppCompatActivity {
 
     public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
 
-        private int spanCount;
-        private int spacing;
-        private boolean includeEdge;
+        private final int spanCount;
+        private final int spacing;
+        private final boolean includeEdge;
 
         public GridSpacingItemDecoration(int spanCount, int spacing, boolean includeEdge) {
             this.spanCount = spanCount;
@@ -284,13 +276,5 @@ public class DayActivity extends AppCompatActivity {
                 }
             }
         }
-    }
-
-    /**
-     * Converting dp to pixel
-     */
-    private int dpToPx(int dp) {
-        Resources r = getResources();
-        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
 }

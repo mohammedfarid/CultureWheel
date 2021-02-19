@@ -1,8 +1,9 @@
 package com.farid.mohammed.culturewheel;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SplachActivity extends AppCompatActivity {
 

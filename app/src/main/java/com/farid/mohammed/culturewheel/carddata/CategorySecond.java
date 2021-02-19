@@ -1,4 +1,4 @@
-package carddata;
+package com.farid.mohammed.culturewheel.carddata;
 
 import android.graphics.Bitmap;
 
@@ -43,6 +43,7 @@ public class CategorySecond {
     public void setDateEventt(String dateEvent) {
         this.dateEvent = dateEvent;
     }
+
     public Bitmap getThumbnailsEventBitmap() {
         return thumbnailsEventBitmap;
     }

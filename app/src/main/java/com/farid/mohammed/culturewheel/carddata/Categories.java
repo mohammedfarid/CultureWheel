@@ -1,18 +1,16 @@
-package carddata;
-
-import android.graphics.Bitmap;
+package com.farid.mohammed.culturewheel.carddata;
 
 /**
  * Created by Mohammed on 26/10/2016.
  */
 
-public class Category {
+public class Categories {
     private int thumbnailsEvent;
     private int overFlow;
     private String tvDay;
     private String tvMonth;
 
-    public Category(int overFlow, int thumbnailsEvent, String tvDay, String tvMonth) {
+    public Categories(int overFlow, int thumbnailsEvent, String tvDay, String tvMonth) {
         this.overFlow=overFlow;
         this.thumbnailsEvent = thumbnailsEvent;
         this.tvDay = tvDay;
